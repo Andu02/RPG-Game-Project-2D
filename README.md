@@ -5,7 +5,7 @@ IDE Used: **IntelliJ IDEA**
 
 # Controls
 * W, A, S, D - Move Cursor/Character
-* Enter - Interact/Select Item/Attack
+* ENTER - Interact/Select Item/Attack
 * P - Player stats and inventory
 * ESC - Pause/Exit dialogue screen
 
