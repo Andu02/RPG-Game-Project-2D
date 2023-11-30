@@ -4,10 +4,10 @@ with the help of the Youtube Channel "RyiSnow", "How to Make a 2D Game in Java" 
 IDE Used: **IntelliJ IDEA** 
 
 # Controls
-W, A, S, D - Move Cursor/Character
-Enter - Interact/Select Item/Attack
-P - Player stats and inventory
-ESC - Pause/Exit dialogue screen
+* W, A, S, D - Move Cursor/Character
+* Enter - Interact/Select Item/Attack
+* P - Player stats and inventory
+* ESC - Pause/Exit dialogue screen
 
 # Preview
 
