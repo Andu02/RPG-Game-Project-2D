@@ -28,6 +28,9 @@ public class Main {
         window.add(gamePanel);
 
         gamePanel.config.loadConfig();
+        if(gamePanel.ui.fullScreen) {
+            window.setUndecorated(true);
+        }
 
         window.pack();
 

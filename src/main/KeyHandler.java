@@ -160,7 +160,6 @@ public class KeyHandler implements KeyListener {
                         break;
                     case 2: // RETURN TO MAIN MENU
                         gp.ui.titleScreenState = 0;
-                        gp.stopMusic();
                         gp.gameState = gp.titleState;
                         break;
                 }
@@ -240,7 +239,7 @@ public class KeyHandler implements KeyListener {
 
             if (pressed) {
                 gp.gameState = gp.playState;
-                gp.playMusic(0);
+
             }
         }
 

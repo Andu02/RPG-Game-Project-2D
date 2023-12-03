@@ -25,6 +25,8 @@ public class Config {
             if(!gp.ui.fullScreen) {
                 bw.write("Off");
             }
+
+            bw.flush();
             bw.newLine();
 
             // MUSIC
@@ -34,7 +36,8 @@ public class Config {
             if(!gp.ui.musicOn) {
                 bw.write("Off");
             }
-            bw.newLine();
+
+            bw.flush();
 
         }
         catch (Exception e) {

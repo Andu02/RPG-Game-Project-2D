@@ -53,6 +53,12 @@ public class AssetManager {
         gp.obj[i].worldY = gp.tileSize*26;
         i++;
 
+        // DELETE DROPS
+        for(int j = i; j < 20; j++) {
+            gp.obj[j] = null;
+        }
+
+
     }
 
     public void setNPC() {
