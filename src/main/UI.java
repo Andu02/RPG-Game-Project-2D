@@ -356,6 +356,8 @@ public class UI {
             g2.drawString(">", x - gp.tileSize, y);
         }
 
+        gp.config.saveConfig();
+
     }
 
     public void drawDialogueScreen() {
