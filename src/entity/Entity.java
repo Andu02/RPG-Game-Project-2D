@@ -131,11 +131,11 @@ public class Entity {
 
     public void dropItem(Entity droppedItem) {
 
-        for(int i = 0; i < gp.obj.length; i++) {
-            if(gp.obj[i] == null) {
-                gp.obj[i] = droppedItem;
-                gp.obj[i].worldX = worldX;
-                gp.obj[i].worldY = worldY;
+        for(int i = 0; i < gp.obj[gp.currentMap].length; i++) {
+            if(gp.obj[gp.currentMap][i] == null) {
+                gp.obj[gp.currentMap][i] = droppedItem;
+                gp.obj[gp.currentMap][i].worldX = worldX;
+                gp.obj[gp.currentMap][i].worldY = worldY;
                 break;
             }
         }
@@ -207,16 +207,16 @@ public class Entity {
         }
     }
 
-    public void draw(Graphics2D g2) {
+    public void draw(Graphics2D g2, int xExtraRenderingTile, int yExtraRenderingTile) {
 
         int screenX = worldX - gp.player.worldX + gp.player.screenX;
         int screenY = worldY - gp.player.worldY + gp.player.screenY;
 
         if (
-            worldX + gp.tileSize > gp.player.worldX - gp.player.screenX &&
-            worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
-            worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
-            worldY - gp.tileSize < gp.player.worldY + gp.player.screenY
+            worldX + gp.tileSize + xExtraRenderingTile > gp.player.worldX - gp.player.screenX &&
+            worldX - gp.tileSize + xExtraRenderingTile < gp.player.worldX + gp.player.screenX &&
+            worldY + gp.tileSize + yExtraRenderingTile > gp.player.worldY - gp.player.screenY &&
+            worldY - gp.tileSize + yExtraRenderingTile < gp.player.worldY + gp.player.screenY
         ) {
 
             BufferedImage image = null;

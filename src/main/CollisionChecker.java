@@ -28,23 +28,23 @@ public class CollisionChecker {
         switch (entity.direction) {
             case "up":
                 entityTopRow = (entityTopWorldY - entity.speed) / gp.tileSize;
-                tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
-                tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
+                tileNum1 = gp.tileM.mapTileNum[gp.currentMap][entityLeftCol][entityTopRow];
+                tileNum2 = gp.tileM.mapTileNum[gp.currentMap][entityRightCol][entityTopRow];
                 break;
             case "down":
                 entityBottomRow = (entityBottomWorldY + entity.speed) / gp.tileSize;
-                tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityBottomRow];
-                tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBottomRow];
+                tileNum1 = gp.tileM.mapTileNum[gp.currentMap][entityLeftCol][entityBottomRow];
+                tileNum2 = gp.tileM.mapTileNum[gp.currentMap][entityRightCol][entityBottomRow];
                 break;
             case "right":
                 entityRightCol = (entityRightWorldX + entity.speed) / gp.tileSize;
-                tileNum1 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
-                tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBottomRow];
+                tileNum1 = gp.tileM.mapTileNum[gp.currentMap][entityRightCol][entityTopRow];
+                tileNum2 = gp.tileM.mapTileNum[gp.currentMap][entityRightCol][entityBottomRow];
                 break;
             case "left":
                 entityLeftCol = (entityLeftWorldX - entity.speed) / gp.tileSize;
-                tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
-                tileNum2 = gp.tileM.mapTileNum[entityLeftCol][entityBottomRow];
+                tileNum1 = gp.tileM.mapTileNum[gp.currentMap][entityLeftCol][entityTopRow];
+                tileNum2 = gp.tileM.mapTileNum[gp.currentMap][entityLeftCol][entityBottomRow];
                 break;
 
         }
@@ -60,21 +60,21 @@ public class CollisionChecker {
 
         int index = 999;
 
-        for (int i = 0; i < gp.obj.length; i++) {
-            if (gp.obj[i] != null) {
+        for (int i = 0; i < gp.obj[gp.currentMap].length; i++) {
+            if (gp.obj[gp.currentMap][i] != null) {
 
                 // entity's collision area
                 entity.collisionArea.x = entity.worldX + entity.collisionArea.x;
                 entity.collisionArea.y = entity.worldY + entity.collisionArea.y;
 
                 // object's collision area
-                gp.obj[i].collisionArea.x = gp.obj[i].worldX + gp.obj[i].collisionArea.x;
-                gp.obj[i].collisionArea.y = gp.obj[i].worldY + gp.obj[i].collisionArea.y;
+                gp.obj[gp.currentMap][i].collisionArea.x = gp.obj[gp.currentMap][i].worldX + gp.obj[gp.currentMap][i].collisionArea.x;
+                gp.obj[gp.currentMap][i].collisionArea.y = gp.obj[gp.currentMap][i].worldY + gp.obj[gp.currentMap][i].collisionArea.y;
 
                 collisionByDirection(entity);
 
-                if (entity.collisionArea.intersects(gp.obj[i].collisionArea)) {
-                    if (gp.obj[i].collision) {
+                if (entity.collisionArea.intersects(gp.obj[gp.currentMap][i].collisionArea)) {
+                    if (gp.obj[gp.currentMap][i].collision) {
                         entity.collisionOn = true;
                     }
                     if (player) {
@@ -84,38 +84,38 @@ public class CollisionChecker {
 
                 entity.collisionArea.x = entity.collisionAreaDefaultX;
                 entity.collisionArea.y = entity.collisionAreaDefaultY;
-                gp.obj[i].collisionArea.x = gp.obj[i].collisionAreaDefaultX;
-                gp.obj[i].collisionArea.y = gp.obj[i].collisionAreaDefaultY;
+                gp.obj[gp.currentMap][i].collisionArea.x = gp.obj[gp.currentMap][i].collisionAreaDefaultX;
+                gp.obj[gp.currentMap][i].collisionArea.y = gp.obj[gp.currentMap][i].collisionAreaDefaultY;
             }
         }
         return index;
     }
 
     // NPC OR MONSTER COLLISION
-    public int checkEntity(Entity entity, Entity[] target) {
+    public int checkEntity(Entity entity, Entity[][] target) {
 
         int index = 999;
 
-        for (int i = 0; i < target.length; i++) {
-            if (target[i] != null) {
+        for (int i = 0; i < target[gp.currentMap].length; i++) {
+            if (target[gp.currentMap][i] != null) {
 
                 entity.collisionArea.x = entity.worldX + entity.collisionArea.x;
                 entity.collisionArea.y = entity.worldY + entity.collisionArea.y;
 
-                target[i].collisionArea.x = target[i].worldX + target[i].collisionArea.x;
-                target[i].collisionArea.y = target[i].worldY + target[i].collisionArea.y;
+                target[gp.currentMap][i].collisionArea.x = target[gp.currentMap][i].worldX + target[gp.currentMap][i].collisionArea.x;
+                target[gp.currentMap][i].collisionArea.y = target[gp.currentMap][i].worldY + target[gp.currentMap][i].collisionArea.y;
 
                 collisionByDirection(entity);
 
-                if (entity.collisionArea.intersects(target[i].collisionArea) && entity != target[i]) {
+                if (entity.collisionArea.intersects(target[gp.currentMap][i].collisionArea) && entity != target[gp.currentMap][i]) {
                     entity.collisionOn = true;
                     index = i;
                 }
 
                 entity.collisionArea.x = entity.collisionAreaDefaultX;
                 entity.collisionArea.y = entity.collisionAreaDefaultY;
-                target[i].collisionArea.x = target[i].collisionAreaDefaultX;
-                target[i].collisionArea.y = target[i].collisionAreaDefaultY;
+                target[gp.currentMap][i].collisionArea.x = target[gp.currentMap][i].collisionAreaDefaultX;
+                target[gp.currentMap][i].collisionArea.y = target[gp.currentMap][i].collisionAreaDefaultY;
             }
         }
         return index;

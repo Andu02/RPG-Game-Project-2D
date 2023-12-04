@@ -12,7 +12,7 @@ public class EventHandler {
     public EventHandler(GamePanel gp) {
         this.gp = gp;
 
-        eventRect = new Rectangle(23, 23, 2, 2);
+        eventRect = new Rectangle(23, 23, 1, 1);
         eventRectDefaultX = eventRect.x;
         eventRectDefaultY = eventRect.y;
     }
@@ -21,6 +21,8 @@ public class EventHandler {
 
         if(hit(34, 17, "up")) {damagePit(gp.dialogueState); return true;}
         if(hit(28, 15, "up")) {healingWater(gp.dialogueState); return true;}
+        if(hit(51, 18, "up")) {enterBuilding(); return true;}
+        if(hit(51, 19, "down")) {exitBuilding(); return true;}
 
         return false;
     }
@@ -67,8 +69,21 @@ public class EventHandler {
         }
     }
 
-    public void teleport(int gameState) {
-        // do it later
+    public void enterBuilding() {
+        if(gp.currentMap != 1) {
+            gp.currentMap = 1;
+            gp.player.worldX = 51 * gp.tileSize;
+            gp.player.worldY = 18 * gp.tileSize;
+        }
+
+    }
+
+    public void exitBuilding() {
+        if(gp.currentMap != 0) {
+            gp.currentMap = 0;
+            gp.player.worldX = 51 * gp.tileSize;
+            gp.player.worldY = 18 * gp.tileSize;
+        }
     }
 
 }

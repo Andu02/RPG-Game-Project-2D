@@ -17,45 +17,47 @@ public class AssetManager {
 
     public void setObject() {
 
+        // MAP 0;
+        int mapNum = 0;
         int i = 0;
-        gp.obj[i] = new OBJ_Door(gp);
-        gp.obj[i].worldX = gp.tileSize*28;
-        gp.obj[i].worldY = gp.tileSize*33;
+        gp.obj[mapNum][i] = new OBJ_Door(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*28;
+        gp.obj[mapNum][i].worldY = gp.tileSize*33;
         i++;
 
-        gp.obj[i] = new OBJ_Well(gp);
-        gp.obj[i].worldX = gp.tileSize*28;
-        gp.obj[i].worldY = gp.tileSize*13;
+        gp.obj[mapNum][i] = new OBJ_Well(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*28;
+        gp.obj[mapNum][i].worldY = gp.tileSize*13;
         i++;
 
-        gp.obj[i] = new OBJ_BronzeCoin(gp);
-        gp.obj[i].worldX = gp.tileSize*28;
-        gp.obj[i].worldY = gp.tileSize*20;
+        gp.obj[mapNum][i] = new OBJ_BronzeCoin(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*28;
+        gp.obj[mapNum][i].worldY = gp.tileSize*20;
         i++;
 
-        gp.obj[i] = new OBJ_Axe_Normal(gp);
-        gp.obj[i].worldX = gp.tileSize*34;
-        gp.obj[i].worldY = gp.tileSize*18;
+        gp.obj[mapNum][i] = new OBJ_Axe_Normal(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*34;
+        gp.obj[mapNum][i].worldY = gp.tileSize*18;
         i++;
 
-        gp.obj[i] = new OBJ_HealthPotion(gp);
-        gp.obj[i].worldX = gp.tileSize*34;
-        gp.obj[i].worldY = gp.tileSize*22;
+        gp.obj[mapNum][i] = new OBJ_HealthPotion(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*34;
+        gp.obj[mapNum][i].worldY = gp.tileSize*22;
         i++;
 
-        gp.obj[i] = new OBJ_ManaPotion(gp);
-        gp.obj[i].worldX = gp.tileSize*36;
-        gp.obj[i].worldY = gp.tileSize*22;
+        gp.obj[mapNum][i] = new OBJ_ManaPotion(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*36;
+        gp.obj[mapNum][i].worldY = gp.tileSize*22;
         i++;
 
-        gp.obj[i] = new OBJ_Key(gp);
-        gp.obj[i].worldX = gp.tileSize*28;
-        gp.obj[i].worldY = gp.tileSize*26;
+        gp.obj[mapNum][i] = new OBJ_Key(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*28;
+        gp.obj[mapNum][i].worldY = gp.tileSize*26;
         i++;
 
         // DELETE DROPS
         for(int j = i; j < 20; j++) {
-            gp.obj[j] = null;
+            gp.obj[gp.currentMap][j] = null;
         }
 
 
@@ -63,25 +65,34 @@ public class AssetManager {
 
     public void setNPC() {
 
-        gp.npc[0] = new NPC_OldMan(gp);
-        gp.npc[0].worldX = gp.tileSize*30;
-        gp.npc[0].worldY = gp.tileSize*22;
+        // MAP 0
+        int mapNum = 0;
+        int i = 0;
+        gp.npc[mapNum][i] = new NPC_OldMan(gp);
+        gp.npc[mapNum][i].worldX = gp.tileSize*30;
+        gp.npc[mapNum][i].worldY = gp.tileSize*22;
+        i++;
 
-        gp.npc[1] = new NPC_Mara(gp);
-        gp.npc[1].worldX = gp.tileSize*26;
-        gp.npc[1].worldY = gp.tileSize*22;
+        gp.npc[mapNum][i] = new NPC_Mara(gp);
+        gp.npc[mapNum][i].worldX = gp.tileSize*26;
+        gp.npc[mapNum][i].worldY = gp.tileSize*22;
+        i++;
     }
 
     public void setMonster() {
 
-        gp.monsters[0] = new MON_BlueSlime(gp);
-        gp.monsters[0].worldX = gp.tileSize*29;
-        gp.monsters[0].worldY = gp.tileSize*20;
+        // MAP 0
+        int mapNum = 0;
+        int i = 0;
+        gp.monsters[mapNum][i] = new MON_BlueSlime(gp);
+        gp.monsters[mapNum][i].worldX = gp.tileSize*29;
+        gp.monsters[mapNum][i].worldY = gp.tileSize*20;
+        i++;
 
-        gp.monsters[1] = new MON_BlueSlime(gp);
-        gp.monsters[1].worldX = gp.tileSize*27;
-        gp.monsters[1].worldY = gp.tileSize*20;
-
+        gp.monsters[mapNum][i] = new MON_BlueSlime(gp);
+        gp.monsters[mapNum][i].worldX = gp.tileSize*27;
+        gp.monsters[mapNum][i].worldY = gp.tileSize*20;
+        i++;
     }
 
 
