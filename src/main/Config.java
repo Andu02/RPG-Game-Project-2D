@@ -19,10 +19,10 @@ public class Config {
             BufferedWriter bw = new BufferedWriter(new FileWriter("config.txt"));
 
             // FULLSCREEN
-            if(gp.ui.fullScreen) {
+            if(gp.fullScreen) {
                 bw.write("On");
             }
-            if(!gp.ui.fullScreen) {
+            if(!gp.fullScreen) {
                 bw.write("Off");
             }
 
@@ -30,10 +30,10 @@ public class Config {
             bw.newLine();
 
             // MUSIC
-            if(gp.ui.musicOn) {
+            if(gp.musicOn) {
                 bw.write("On");
             }
-            if(!gp.ui.musicOn) {
+            if(!gp.musicOn) {
                 bw.write("Off");
             }
 
@@ -55,20 +55,20 @@ public class Config {
 
             // FULLSCREEN
             if(s.equals("On")) {
-                gp.ui.fullScreen = true;
+                gp.fullScreen = true;
             }
             if(s.equals("Off")) {
-                gp.ui.fullScreen = false;
+                gp.fullScreen = false;
             }
 
             s = br.readLine();
 
             // MUSIC ON
             if(s.equals("On")) {
-                gp.ui.musicOn = true;
+                gp.musicOn = true;
             }
             if(s.equals("Off")) {
-                gp.ui.musicOn = false;
+                gp.musicOn = false;
             }
 
         }

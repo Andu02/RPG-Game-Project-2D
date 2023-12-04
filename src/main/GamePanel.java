@@ -86,6 +86,12 @@ public class GamePanel extends JPanel implements Runnable {
     public int characterState = 4;
     public int gameOverState = 5;
 
+    // MUSIC
+    public boolean musicOn;
+
+    // FULLSCREEN
+    public boolean fullScreen;
+
     public GamePanel() {
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -109,11 +115,11 @@ public class GamePanel extends JPanel implements Runnable {
         tempScreen = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB);
         g2 = (Graphics2D)tempScreen.getGraphics();
 
-        if(ui.fullScreen) {
+        if(fullScreen) {
             setFullScreen();
         }
 
-        if(ui.musicOn) {
+        if(musicOn) {
             playMusic(0);
         }
 

@@ -33,9 +33,7 @@ public class UI {
     BufferedImage mana_full, mana_blank;
 
     // PAUSE SCREEN
-    boolean musicOn = true;
     public int pauseCommandNum = 0;
-    public boolean fullScreen = false;
 
     // INVENTORY
     public int slotCol = 0;
@@ -90,7 +88,6 @@ public class UI {
 
             //MESSAGE
             drawMessage();
-
         }
         // PAUSE STATE
         if(gp.gameState == gp.pauseState) {
@@ -320,7 +317,7 @@ public class UI {
 
         // SETTINGS - MUSIC ON/OFF
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 60F));
-        if(musicOn) {
+        if(gp.musicOn) {
             text = "Music ON";
         }
         else {
@@ -334,7 +331,7 @@ public class UI {
         }
 
         // FULLSCREEN
-        if(!fullScreen) {
+        if(!gp.fullScreen) {
             text = "Windowed";
         }
         else {

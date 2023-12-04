@@ -141,21 +141,21 @@ public class KeyHandler implements KeyListener {
             case KeyEvent.VK_ENTER:
                 switch (gp.ui.pauseCommandNum) {
                     case 0: // MUSIC
-                        if (gp.ui.musicOn) {
+                        if (gp.musicOn) {
                             gp.stopMusic();
-                            gp.ui.musicOn = false;
+                            gp.musicOn = false;
                         } else {
                             gp.playMusic(0);
-                            gp.ui.musicOn = true;
+                            gp.musicOn = true;
                         }
                         break;
                     case 1: // FULLSCREEN
-                        if (!gp.ui.fullScreen) {
+                        if (!gp.fullScreen) {
                             gp.setFullScreen();
-                            gp.ui.fullScreen = true;
+                            gp.fullScreen = true;
                         } else {
                             gp.setWindowed();
-                            gp.ui.fullScreen = false;
+                            gp.fullScreen = false;
                         }
                         break;
                     case 2: // RETURN TO MAIN MENU
