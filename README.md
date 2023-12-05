@@ -12,8 +12,7 @@ IDE Used: **IntelliJ IDEA**
 # Preview
 
 - main menu
-![undo_s_aventures_rpg_2d_main_menu](https://github.com/Andu02/RPG-Game-Project-2D/assets/133790348/1b68ab93-1300-4aa4-9d5a-5f572df535cb)
-
+![main_menu](https://github.com/Andu02/RPG-Game-Project-2D/assets/133790348/c47cb9a4-d0ec-42b5-8077-70e340625cd5)
 
 - gameplay
 ![undo_s_aventures_rpg_2d_gameplay](https://github.com/Andu02/RPG-Game-Project-2D/assets/133790348/4a887f96-35ce-406d-baf3-0b61e6416bff)
