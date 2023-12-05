@@ -55,6 +55,11 @@ public class AssetManager {
         gp.obj[mapNum][i].worldY = gp.tileSize*26;
         i++;
 
+        gp.obj[mapNum][i] = new OBJ_Hole(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*34;
+        gp.obj[mapNum][i].worldY = gp.tileSize*17;
+        i++;
+
         // DELETE DROPS
         for(int j = i; j < 20; j++) {
             gp.obj[gp.currentMap][j] = null;
