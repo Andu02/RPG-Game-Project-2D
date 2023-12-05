@@ -21,5 +21,10 @@ IDE Used: **IntelliJ IDEA**
 - invetory + character stats
 ![undo_s_aventures_rpg_2d_inventory+stats](https://github.com/Andu02/RPG-Game-Project-2D/assets/133790348/bec5c17c-938e-4c38-b7f9-5bb50ce92902)
 
+- entering buildings
+![1](https://github.com/Andu02/RPG-Game-Project-2D/assets/133790348/6b598c22-4f57-4651-bc2d-84803dbb6b04)
+![2](https://github.com/Andu02/RPG-Game-Project-2D/assets/133790348/57831c2e-0f86-4754-89d5-084abcb555b5)
+
+
 # Disclaimer
 THE GAME IS NOT FINISHED
